@@ -85,7 +85,7 @@ body {
 }
 
 .input:focus::placeholder{
-  opacity: 1;
+  opacity: 1; 
 }
 
 .input:focus + .label, 
@@ -117,32 +117,7 @@ body {
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
-/* 
-
-
-
-
-
-.botoes{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
+.input:focus, .btn:focus
+.input:hover, .btn:hover{
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 }
-
-.btn{
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #231C01;
-  color: #FFF5CF;
-  font-weight: 700;
-  cursor: pointer;
-}
- */
