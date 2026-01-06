@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gerador de números aleatórios</title>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <div class="header"> 
+      <div class="title">
+        <p></p>
+        <h1>Gerador de números aleatórios</h1>
+      </div>
+      <p>
+        Defina o intervalo e gere números aleatórios
+      </p>
+    </div>
+
+    <div class="field">
+
+      <div class="input">
+        <input type="number" id="minValue" placeholder="Número Mínimo">
+        <label for="minValue" class="label">
+          Número Mínimo
+        </label>
+      </div>
+
+      <div class="input">
+        <input type="number" id="maxValue" placeholder="Número Máximo">
+        <label for="maxValue">
+          Número Máximo
+        </label>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="btnGenerate" class="btn btn-generate">
+        Gerar Número
+      </button>
+      <button id="btnClear" class="btn btn-clear">
+        Limpar Tudo
+      </button>
+    </div>
+
+    <div class="containerCurrentNum">
+      <p>
+        Número Gerado
+      </p>
+      <p id="currentNum">
+
+      </p>
+    </div>
+
+    <div class="history">
+      <h2>
+        Histórico (<span id="amount"></span> números gerados)
+      </h2>
+
+      <div class="historyNum">
+        <div class="numsHistory">
+          <div class="num">
+            <span id="drawnNum"></span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="noHistory">
+      <p>
+        Nenhum número gerado ainda. Clique em "Gerar Número" para começar!
+      </p>
+    </div>
+
+  </div>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
