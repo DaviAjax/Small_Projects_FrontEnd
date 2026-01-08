@@ -60,7 +60,6 @@ body {
 }
 
 .input{
-  width: 100%;
   position: relative;
 }
 
@@ -106,7 +105,7 @@ body {
   padding: 0 .5rem;
   background-color: #a855f7;
   border-radius: .25rem;
-  color: #FFF5CF;
+  color: #FFF;
   transition: all .3s ease-in-out;
 }
 
@@ -149,7 +148,7 @@ body {
   background-color: #cbd5e1; 
 }
 
-.containerCurrentNum{
+.CurrentNum{
   width: 100%;
   background: linear-gradient(to right, #a855f7, #3b82f6);
   margin-bottom: 2rem;
@@ -160,24 +159,23 @@ body {
               0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
-.containerCurrentNum p{
+.CurrentNum p{
   color: #fff;
   font-size: 0.875rem;
   line-height: 1.25rem; 
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
 }
 
-.containerCurrentNum #currentNum {
+.CurrentNum #currentNum {
   font-size: 3.75rem;
   font-weight: 700;
   line-height: 1;
 }
 
 .history {
-  display: none;
   width: 100%;
 }
 
@@ -189,7 +187,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.historyNum {
+.genHistory {
   width: 100%;
   background-color:#f9fafb; 
   border-radius: 0.5rem;
@@ -198,7 +196,7 @@ body {
   overflow-y: auto;
 }
 
-.numsHistory {
+.numHistory {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 0.5rem;
@@ -218,7 +216,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#drawnNum{
+#pastNumber{
   color: #2d3748;
   font-weight: 600;
 }
