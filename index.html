@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Davi_DevRoom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <title>pequenos projetos front-end</title>
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    *{
+        padding: 0;margin: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        background: rgba(0, 0, 0, .8);
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgb(132, 132, 132);
+        width: 350px;
+        padding: 16px;
+        gap: 18px;
+        border-radius: 10px;
+        border: 1px solid rgb(155, 154, 154);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, .8);
+    }
+
+    .container a{
+        color: #000;
+        text-transform: uppercase;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 600;
+        background: #f7e025;
+        padding: 16px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .container a:hover{
+        background: #faee4a;
+        box-shadow: 0px 1px 15px #f7e025;
+    }
+
+    footer{
+        margin-top: 16px;
+        text-align: center;
+        color: #fff;
+    }
+
+    footer a{
+        cursor: pointer;
+        color: #f7e025;
+    }
+  </style>
+    <main class="container">
+        <a href="Projects/Counter/index.html" target="_blank" rel="noopener noreferrer">contador</a>
+        <a href="Projects/Random_number_generator/index.html" target="_blank" rel="noopener noreferrer">Gerador de números aleatórios</a>
+    </main>
+
+    <footer>
+        By me <a href="https://github.com/DaviAjax">&copy; DaviAjax</a>.
+    </footer>
+</body>
+</html>
