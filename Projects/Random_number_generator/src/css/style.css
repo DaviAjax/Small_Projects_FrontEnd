@@ -196,16 +196,17 @@ body {
   padding: 1rem; 
   max-height: 16rem;
   overflow-y: auto;
+  flex-wrap: wrap;
 }
 
 .numHistory {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
 }
 
 .num{
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 0.75rem;

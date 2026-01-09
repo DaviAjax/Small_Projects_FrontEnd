@@ -1,40 +1,76 @@
-// inputs
 const minInput = document.getElementById("min");
 const maxInput = document.getElementById("max");
-// buttons
+
 const btnGenerate = document.getElementById("btn-Generate");
 const btnClear = document.getElementById("btn-Clear");
-//Current number
+
 const currentContainer = document.querySelector(".CurrentNum");
 const currentNum = document.getElementById("currentNum");
-// history container
+
 const historyContainer = document.querySelector(".history");
-const genHistory = document.querySelector(".genHistory");
+const numHistory = document.querySelector(".numHistory");
 const noHistory = document.querySelector(".noHistory");
 const amount = document.getElementById("amount");
 
+let history = [];
 
-btnGenerate.addEventListener("click", () => {
+function numbergenerator() {
   const min = Number(minInput.value);
   const max = Number(maxInput.value);
 
-  if(minInput.value === "" || maxInput.value === ""){
-    alert("preencha os campos");
+  if (minInput.value === "" || maxInput.value === "") {
+    alert("Preencha os campos para prosseguir.");
     return;
   }
 
-  if(min >= max){
+  if (min >= max) {
     alert("O numero mínimor deve ser menor que o Máximo.");
     return;
   }
 
-  const numberGenerated = Math.floor(Math.random() * (max - min + 1) + min)
+  const generatedNumber = Math.floor(Math.random() * (max - min + 1) + min); //Pseudoaleatório: Math.random() gera números pseudoaleatórios, não verdadeiramente aleatórios. Não use para fins de segurança. Intervalo: A fórmula para intervalo garante que tanto min quanto max possam ser retornados.
 
-  currentNum.textContent = numberGenerated;
-
-  currentContainer.style.display = "block";
-  historyContainer.style.display = "block";
   noHistory.style.display = "none";
 
-})
+  currentContainer.style.display = "block";
+  currentNum.textContent = generatedNumber;
 
+  historyContainer.style.display = "block";
+
+  addToHistory(generatedNumber);
+}
+
+function addToHistory(number) {
+  history.push(number);
+
+  const divNumHistory = document.createElement("div");
+  divNumHistory.classList.add("num");
+
+  divNumHistory.innerHTML = `
+    <span id="pastNumber">${number}</span>
+  `;
+
+  numHistory.appendChild(divNumHistory);
+
+  amount.textContent = history.length;
+
+  noHistory.style.display = "none";
+}
+
+function clearAll() {
+  minInput.value = "";
+  maxInput.value = "";
+
+  currentNum.textContent = "";
+
+  history = [];
+  numHistory.innerHTML = "";
+  amount.textContent = "0";
+
+  noHistory.style.display = "block";
+  historyContainer.style.display = "none";
+  currentContainer.style.display = "none";
+}
+
+btnGenerate.addEventListener("click", numbergenerator);
+btnClear.addEventListener("click", clearAll);
