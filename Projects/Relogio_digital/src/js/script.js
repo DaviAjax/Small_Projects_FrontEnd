@@ -1,3 +1,4 @@
+// inicial implementação
 const timeElement = document.getElementById("time");
 
 const updateClock = () => {
