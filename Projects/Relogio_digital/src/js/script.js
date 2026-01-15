@@ -1,20 +1,19 @@
-// inicial implementação
 const timeElement = document.getElementById("time");
+const dateElement = document.getElementById("date");
+const amPmElement = document.getElementById("ampm");
 
-const updateClock = () => {
-  const present = new Date();
+// controls
+const toggleFormatElement = document.getElementById("toggle-format");
+const toggleThemeElement = document.getElementById("toggle-theme");
 
-  const hours = present.getHours();
-  const minutes = present.getMinutes();
-  const seconds = present.getSeconds();
+function updateTimer() {
+  const now = new Date();
 
-  const clockHTML = `
-    <span>${String(hours).length === 1 ? `0${hours}` : hours}<span> :
-    <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}<span> :
-    <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}<span>
-  `
-  timeElement.innerHTML = clockHTML;
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
 
-};
+  console.log(hours, minutes, seconds)
+}
 
-setInterval(updateClock, 1000);
+setInterval(updateTimer, 1000);
