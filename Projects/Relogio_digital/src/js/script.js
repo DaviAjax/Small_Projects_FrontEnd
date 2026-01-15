@@ -1,3 +1,4 @@
+// inicial implementação
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
 const amPmElement = document.getElementById("ampm");
