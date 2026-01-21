@@ -1,4 +1,5 @@
 // inicial implementação
+const body = document.body;
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
 const amPmElement = document.getElementById("ampm");
@@ -8,6 +9,7 @@ const toggleFormatElement = document.getElementById("toggle-format");
 const toggleThemeElement = document.getElementById("toggle-theme");
 
 let is24h = localStorage.getItem("format") === "24";
+let isDarkMode = false;
 
 function updateTimer() {
   const now = new Date();
@@ -62,6 +64,15 @@ function updateTimer() {
 toggleFormatElement.addEventListener("click", () => {
   is24h = !is24h;
   localStorage.setItem("format", is24h ? "24" : "12");
+  toggleFormatElement.textContent = `Formato ${is24Hour ? "24h" : "12h"}`;
+});
+
+toggleThemeElement.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+  body.classList.toggle("dark", isDarkMode);
+  toggleThemeElement.textContent = isDarkMode
+    ? "☀️ Modo Claro"
+    : "🌙 Modo Escuro";
 });
 
 setInterval(updateTimer, 1000);
