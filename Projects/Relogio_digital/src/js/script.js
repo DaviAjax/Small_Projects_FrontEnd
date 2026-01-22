@@ -75,4 +75,4 @@ toggleThemeElement.addEventListener("click", () => {
     : "🌙 Modo Escuro";
 });
 
-setInterval(updateTimer, 1000);
+setInterval(updateClock, 1000);
