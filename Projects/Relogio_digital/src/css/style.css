@@ -10,3 +10,19 @@ body{
   background: #f3f4f6;
   transition: background 0.5s; 
 }
+
+.clock-container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.clock-card{
+  width: 100%;
+  max-width: 520px;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  
+}
