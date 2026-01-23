@@ -1,6 +1,7 @@
+// Inputs
 const minInput = document.getElementById("min");
 const maxInput = document.getElementById("max");
-
+// Controls
 const btnGenerate = document.getElementById("btn-Generate");
 const btnClear = document.getElementById("btn-Clear");
 

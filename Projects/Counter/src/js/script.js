@@ -1,6 +1,7 @@
 const countElement = document.getElementById("counter");
 const incrementInput = document.getElementById("increment");
 
+// Controls
 const btnSubtract = document.getElementById("btnSubtract");
 const btnReset = document.getElementById("btnReset");
 const btnSum = document.getElementById("btnSum");
