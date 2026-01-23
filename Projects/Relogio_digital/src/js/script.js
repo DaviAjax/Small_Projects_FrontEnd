@@ -1,35 +1,34 @@
-// inicial implementação
-const body = document.body;
-const timeElement = document.getElementById("time");
-const dateElement = document.getElementById("date");
-const amPmElement = document.getElementById("ampm");
-
-// controls
-const toggleFormatElement = document.getElementById("toggle-format");
-const toggleThemeElement = document.getElementById("toggle-theme");
-
-let is24h = localStorage.getItem("format") === "24";
 let isDarkMode = false;
+let is24Hour = true;
+let currentTime = new Date();
 
-function updateTimer() {
-  const now = new Date();
+const body = document.body;
 
-  let hours = now.getHours();
-  const minutes = String(now.getMinutes()).padStart(2, "0");
-  const seconds = String(now.getSeconds()).padStart(2, "0");
+const timeEl = document.getElementById("time");
+const periodEl = document.getElementById("ampm");
+const dateEl = document.getElementById("date");
 
-  let ampm = "";
+const toggleFormatBtn = document.getElementById("toggle-format");
+const toggleThemeBtn = document.getElementById("toggle-theme");
 
-  if (!is24h) {
-    ampm = hours >= 12 ? "PM" : "AM";
+function formatTime(date) {
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  let period = "";
+
+  if (!is24Hour) {
+    period = hours >= 12 ? "PM" : "AM";
     hours = hours % 12 || 12;
   }
 
-  hours = String(hours).padStart(2, "0");
+  return {
+    time: `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`,
+    period
+  };
+}
 
-  timeElement.textContent = `${hours} : ${minutes} : ${seconds}`;
-  amPmElement.textContent = ampm;
-
+function formatDate(date) {
   const days = [
     "Domingo",
     "Segunda-feira",
@@ -37,7 +36,7 @@ function updateTimer() {
     "Quarta-feira",
     "Quinta-feira",
     "Sexta-feira",
-    "Sábado",
+    "Sábado"
   ];
 
   const months = [
@@ -52,27 +51,52 @@ function updateTimer() {
     "Setembro",
     "Outubro",
     "Novembro",
-    "Dezembro",
+    "Dezembro"
   ];
 
-  dateElement.textContent = `${days[now.getDay()]}, ${now.getDate()} de ${
-    months[now.getMonth()]
-  } de ${now.getFullYear()}`;
+  return `${days[date.getDay()]}, ${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
 }
 
-// Alternar formato AM PM
-toggleFormatElement.addEventListener("click", () => {
-  is24h = !is24h;
-  localStorage.setItem("format", is24h ? "24" : "12");
-  toggleFormatElement.textContent = `Formato ${is24Hour ? "24h" : "12h"}`;
-});
+function render() {
+  const { time, period } = formatTime(currentTime);
 
-toggleThemeElement.addEventListener("click", () => {
-  isDarkMode = !isDarkMode;
+  // Atualiza hora
+  timeEl.textContent = time;
+
+  // AM / PM
+  if (!is24Hour) {
+    periodEl.textContent = period;
+    periodEl.classList.remove("hidden");
+  } else {
+    periodEl.classList.add("hidden");
+  }
+
+  // Data
+  dateEl.textContent = formatDate(currentTime);
+
+  // Tema
   body.classList.toggle("dark", isDarkMode);
-  toggleThemeElement.textContent = isDarkMode
+
+  // Texto dos botões
+  toggleFormatBtn.textContent = `Formato ${is24Hour ? "24h" : "12h"}`;
+  toggleThemeBtn.textContent = isDarkMode
     ? "☀️ Modo Claro"
     : "🌙 Modo Escuro";
+}
+
+toggleFormatBtn.addEventListener("click", () => {
+  is24Hour = !is24Hour;
+  render();
 });
 
-setInterval(updateClock, 1000);
+toggleThemeBtn.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+  render();
+});
+
+setInterval(() => {
+  currentTime = new Date();
+  render();
+}, 1000);
+
+render();
