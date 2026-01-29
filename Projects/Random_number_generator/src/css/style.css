@@ -148,7 +148,7 @@ body {
   background-color: #cbd5e1; 
 }
 
-.CurrentNum{
+.current-num{
   display: none;
   width: 100%;
   background: linear-gradient(to right, #a855f7, #3b82f6);
@@ -160,7 +160,7 @@ body {
               0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
-.CurrentNum p{
+.current-num p{
   color: #fff;
   font-size: 0.875rem;
   line-height: 1.25rem; 
@@ -170,7 +170,7 @@ body {
   letter-spacing: 0.05rem;
 }
 
-.CurrentNum #currentNum {
+.current-num #current-num {
   font-size: 3.75rem;
   font-weight: 700;
   line-height: 1;
@@ -189,7 +189,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.genHistory {
+.gen-history {
   width: 100%;
   background-color:#f9fafb; 
   border-radius: 0.5rem;
@@ -199,7 +199,7 @@ body {
   flex-wrap: wrap;
 }
 
-.numHistory {
+.num-history {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
@@ -219,16 +219,16 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#pastNumber{
+#past-number{
   color: #2d3748;
   font-weight: 600;
 }
 
-.noHistory{
+.no-history{
   text-align: center;
   padding: 2rem 0;
 }
 
-.noHistory p{
+.no-history p{
   color: #9ca3af;
 }

@@ -3,11 +3,12 @@ let is24Hour = true;
 let currentTime = new Date();
 
 const body = document.body;
-
+// Elements
 const timeEl = document.getElementById("time");
 const periodEl = document.getElementById("ampm");
 const dateEl = document.getElementById("date");
 
+// controls
 const toggleFormatBtn = document.getElementById("toggle-format");
 const toggleThemeBtn = document.getElementById("toggle-theme");
 

@@ -5,12 +5,12 @@ const maxInput = document.getElementById("max");
 const btnGenerate = document.getElementById("btn-Generate");
 const btnClear = document.getElementById("btn-Clear");
 
-const currentContainer = document.querySelector(".CurrentNum");
-const currentNum = document.getElementById("currentNum");
+const currentContainer = document.querySelector(".current-num");
+const currentNum = document.getElementById("current-num");
 
 const historyContainer = document.querySelector(".history");
-const numHistory = document.querySelector(".numHistory");
-const noHistory = document.querySelector(".noHistory");
+const numHistory = document.querySelector(".num-history");
+const noHistory = document.querySelector(".no-history");
 const amount = document.getElementById("amount");
 
 let history = [];
@@ -48,7 +48,7 @@ function addToHistory(number) {
   divNumHistory.classList.add("num");
 
   divNumHistory.innerHTML = `
-    <span id="pastNumber">${number}</span>
+    <span id="past-number">${number}</span>
   `;
 
   numHistory.appendChild(divNumHistory);
